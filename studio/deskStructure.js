@@ -28,5 +28,15 @@ export default () =>
         .title('Routes')
         .schemaType('route')
         .child(S.documentTypeList('route').title('Routes')),
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      S.listItem()
+        .title('Test')
+        .schemaType('route')
+        .child(S.documentTypeList('route').title('Routes')),
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
+      S.listItem()
+        .title('More Test')
+        .schemaType('route')
+        .child(S.documentTypeList('route').title('Routes')),
       ...S.documentTypeListItems().filter(hiddenDocTypes)
     ])
